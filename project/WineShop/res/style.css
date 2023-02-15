@@ -1,0 +1,150 @@
+* {
+	-fx-primary-color: #660033;
+	-fx-secondary-color: #4d0026;
+
+	-fx-focus-color: -fx-secondary-color;
+}
+
+.backgroundImage
+{
+	-fx-background-image: url("backgroundLogin.jpg");
+	-fx-background-size: cover;
+}
+
+.boldText
+{
+	 -fx-font-smoothing-type: lcd;
+	 -fx-fill: black;
+	 -fx-font-weight: bold;
+	 -fx-font-size: 10pt;
+}
+
+.titleText
+{
+	 -fx-font-family: 'Century Schoolbook';
+	 -fx-font-smoothing-type: lcd;
+	 -fx-fill: black;
+	 -fx-font-size: 15pt;
+}
+
+.normalText
+{
+	 -fx-font-smoothing-type: lcd;
+	 -fx-fill: black;
+	 -fx-font-size: 10pt;
+}
+
+.whiteBackground
+{
+	-fx-background-color: white;
+}
+
+.round
+{
+	-fx-background-radius: 8;
+	-fx-min-width: 230;
+	-fx-min-height: -fx-min-width;
+	-fx-max-width: -fx-min-width;
+	-fx-max-height: -fx-min-width;
+	-fx-background-color: white;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.roundRect
+{
+	-fx-background-radius: 8;
+	-fx-background-color: white;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.button {
+   	-fx-background-color: -fx-primary-color;
+   	-fx-text-fill: white;
+   	-fx-padding: 8, 8, 8, 8;
+}
+
+.button:hover {
+    -fx-background-color: -fx-secondary-color;
+   	-fx-text-fill: white;
+}
+
+.button:pressed {
+    -fx-background-color: -fx-secondary-color;
+   	-fx-text-fill: red;
+}
+
+.tab-header-area .tab-header-background {
+ 	-fx-background-color: -fx-primary-color;
+}
+.tab-pane .tab:selected {
+	-fx-background-color: -fx-secondary-color;
+	-fx-background-insets: 0 0 0 0;
+	-fx-background-radius: 0 0 0 0;
+}
+.tab .tab-label { 
+ 	-fx-alignment: CENTER;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-padding: 0 10 0 10;
+}
+.tab-pane:top *.tab-header-area {
+	-fx-padding: 0 0 0 30;
+	
+	/* NO SPACE LEFT OF FIRST TAB */
+	/* -fx-padding: 0 0 0 30; */
+}
+.tab-pane {
+	-fx-background-color: transparent;
+	-fx-tab-min-width: 100px;
+	-fx-tab-min-height: 33px;
+	-fx-tab-max-height: 33px;
+}
+.tab-pane .tab {
+	-fx-background-color: transparent;
+}
+.tab-pane:focused .tab-header-area .headers-region .tab:selected .focus-indicator {
+ 	-fx-border-width: 0;
+	-fx-border-insets: 0 0 0 0;
+	-fx-border-radius: 0;
+}
+
+.text-field {
+    -fx-background-color: -fx-primary-color , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+
+.text-field:focused {
+    -fx-background-color: -fx-primary-color , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+
+.check-box .box {
+
+-fx-background-color: white;
+-fx-border-color:grey;
+-fx-border-radius:3px; 
+
+}
+
+.check-box:selected .mark {
+
+-fx-background-color: white;
+
+}
+
+.check-box:selected .box {
+
+-fx-background-color: -fx-secondary-color;
+}
+
+.choice-box .context-menu { -fx-background-color: -fx-primary-color; }
+.choice-box .menu-item:focused { -fx-background-color: white; }
+.choice-box .menu-item > .label { -fx-text-fill: white; }
+.choice-box .menu-item:focused > .label { -fx-text-fill: -fx-primary-color; }
+
+.choice-box {
+  -fx-background-color: -fx-primary-color;
+  -fx-mark-color: white;
+}
+
+.choice-box > .label { -fx-text-fill: white; }

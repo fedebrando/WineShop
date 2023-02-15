@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<TabPane fx:id="tpAdministratorEmployee" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AdministratorEmployeeController">
+  <tabs>
+    <Tab id="tabWines" fx:id="tabWines" text="Wines">
+         <content>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab id="tabOnSale" fx:id="tabWinesOnSale" text="On sale">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tvWines" layoutX="14.0" layoutY="128.0" prefHeight="200.0" prefWidth="490.0">
+                                <columns>
+                                  <TableColumn fx:id="colWName" prefWidth="75.0" text="Name" />
+                                  <TableColumn fx:id="colWProducer" prefWidth="75.0" text="Producer" />
+                                    <TableColumn fx:id="colWOrigin" prefWidth="75.0" text="Origin" />
+                                    <TableColumn fx:id="colWYear" prefWidth="75.0" text="Year" />
+                                    <TableColumn fx:id="colWNotes" prefWidth="75.0" text="Notes" />
+                                    <TableColumn fx:id="colWVines" prefWidth="75.0" text="Vines" />
+                                    <TableColumn fx:id="colWPrice" prefWidth="75.0" text="Price" />
+                                    <TableColumn fx:id="colWAvailableQuantity" prefWidth="112.79998779296875" text="Available quantity" />
+                                </columns>
+                              </TableView>
+                              <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Wines">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtWineName" layoutX="14.0" layoutY="69.0" />
+                              <Label layoutX="14.0" layoutY="51.0" style="-fx-font-weight: bold;" text="Name" />
+                              <Label layoutX="179.0" layoutY="51.0" style="-fx-font-weight: bold;" text="Year" />
+                              <Spinner fx:id="spnWineYear" layoutX="179.0" layoutY="69.0" prefHeight="26.0" prefWidth="88.0" />
+                              <Button layoutX="283.0" layoutY="69.0" mnemonicParsing="false" onAction="#btnSearchWinesHandler" text="Search" />
+                              <CheckBox layoutX="179.0" layoutY="97.0" mnemonicParsing="false" onAction="#chkConsiderHandler" text="Consider" />
+                           </children>
+                        </AnchorPane>
+                     </content></Tab>
+                <Tab id="tabSalesOrder" fx:id="tabWinesSalesOrder" text="Sales order">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Sales orders">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="278.0" layoutY="70.0" mnemonicParsing="false" onAction="#btnSalesOrderListHandler" text="Search" />
+                              <Label layoutX="14.0" layoutY="52.0" style="-fx-font-weight: bold;" text="Start Date" />
+                              <Label layoutX="145.0" layoutY="52.0" style="-fx-font-weight: bold;" text="End Date" />
+                              <TableView fx:id="tvSalesOrder" layoutX="14.0" layoutY="117.0" prefHeight="200.0" prefWidth="494.0">
+                                <columns>
+                                    <TableColumn fx:id="colSODate" prefWidth="89.5999755859375" text="Date" />
+                                  <TableColumn fx:id="colSOUser" prefWidth="76.0" text="User" />
+                                    <TableColumn fx:id="colSODigitalSignature" prefWidth="103.199951171875" text="DigitalSignature" />
+                                    <TableColumn fx:id="colSOPrice" prefWidth="54.39996337890625" text="Price" />
+                                    <TableColumn fx:id="colSODeliveryDate" prefWidth="101.60003662109375" text="Delivery Date" />
+                                    <TableColumn fx:id="colSOFCService" prefWidth="68.80002441406248" text="FC Service" />
+                                </columns>
+                              </TableView>
+                              <DatePicker fx:id="dateSOStartDate" editable="false" layoutX="14.0" layoutY="70.0" prefHeight="26.0" prefWidth="114.0" />
+                              <DatePicker fx:id="dateSOEndDate" editable="false" layoutX="146.0" layoutY="70.0" prefWidth="114.0" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab id="tabPurchaseOrder" fx:id="tabWinesPurchaseOrder" text="Purchase order">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="343.0" prefWidth="600.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Purchase orders">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="278.0" layoutY="70.0" mnemonicParsing="false" onAction="#btnPurchaseOrderListHandler" text="Search" />
+                                    <Label layoutX="14.0" layoutY="52.0" style="-fx-font-weight: bold;" text="Start Date" />
+                                    <Label layoutX="145.0" layoutY="52.0" style="-fx-font-weight: bold;" text="End Date" />
+                                    <TableView fx:id="tvPurchaseOrder" layoutX="14.0" layoutY="117.0" prefHeight="200.0" prefWidth="494.0">
+                                       <columns>
+                                          <TableColumn fx:id="colPODate" prefWidth="89.5999755859375" text="Date" />
+                                          <TableColumn fx:id="colPOUser" prefWidth="76.0" text="User" />
+                                          <TableColumn fx:id="colPODigitalSignature" prefWidth="103.199951171875" text="DigitalSignature" />
+                                          <TableColumn fx:id="colPOPrice" prefWidth="54.39996337890625" text="Price" />
+                                          <TableColumn fx:id="colPODeliveryDate" prefWidth="101.60003662109375" text="Delivery Date" />
+                                          <TableColumn fx:id="colPOFCService" prefWidth="68.80002441406248" text="FC Service" />
+                                       </columns>
+                                    </TableView>
+                                    <DatePicker fx:id="datePOStartDate" editable="false" layoutX="14.0" layoutY="70.0" prefHeight="26.0" prefWidth="114.0" />
+                                    <DatePicker fx:id="datePOEndDate" editable="false" layoutX="146.0" layoutY="70.0" prefWidth="114.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab id="tabPurchaseProposal" fx:id="tabWinesPurchaseProposal" text="Purchase proposal">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="343.0" prefWidth="600.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Purchase proposals">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="278.0" layoutY="70.0" mnemonicParsing="false" onAction="#btnPurchaseProposalListHandler" text="Search" />
+                                    <Label layoutX="14.0" layoutY="52.0" style="-fx-font-weight: bold;" text="Start Date" />
+                                    <Label layoutX="145.0" layoutY="52.0" style="-fx-font-weight: bold;" text="End Date" />
+                                    <TableView fx:id="tvPurchaseProposal" layoutX="14.0" layoutY="117.0" prefHeight="200.0" prefWidth="494.0">
+                                       <columns>
+                                          <TableColumn fx:id="colPPDate" prefWidth="89.5999755859375" text="Date" />
+                                          <TableColumn fx:id="colPPUser" prefWidth="76.0" text="User" />
+                                          <TableColumn fx:id="colPPDigitalSignature" prefWidth="103.199951171875" text="DigitalSignature" />
+                                          <TableColumn fx:id="colPPPrice" prefWidth="54.39996337890625" text="Price" />
+                                          <TableColumn fx:id="colPPDeliveryDate" prefWidth="101.60003662109375" text="Delivery Date" />
+                                          <TableColumn fx:id="colPPFCService" prefWidth="68.80002441406248" text="FC Service" />
+                                       </columns>
+                                    </TableView>
+                                    <DatePicker fx:id="datePPStartDate" editable="false" layoutX="14.0" layoutY="70.0" prefHeight="26.0" prefWidth="114.0" />
+                                    <DatePicker fx:id="datePPEndDate" editable="false" layoutX="146.0" layoutY="70.0" prefWidth="114.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </content>
+    </Tab>
+    <Tab id="tabEmployees" text="Employees">
+         <content>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab id="tabAdd" text="Add">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Add an employee">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="253.0" layoutX="14.0" layoutY="51.0" stroke="BLACK" strokeType="INSIDE" width="397.0" />
+                              <Button fx:id="btnAddEmployee" layoutX="336.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnAddEmployeeHandler" text="Add" />
+                              <Label layoutX="28.0" layoutY="66.0" style="-fx-font-weight: bold;" text="Name" />
+                              <TextField fx:id="txtEmpName" layoutX="28.0" layoutY="84.0" />
+                              <Label layoutX="225.0" layoutY="66.0" style="-fx-font-weight: bold;" text="Surname" />
+                              <TextField fx:id="txtEmpSurname" layoutX="225.0" layoutY="84.0" />
+                              <Label layoutX="28.0" layoutY="127.0" style="-fx-font-weight: bold;" text="Fiscal code" />
+                              <TextField fx:id="txtEmpFiscalCode" layoutX="28.0" layoutY="145.0" />
+                              <Label layoutX="225.0" layoutY="127.0" style="-fx-font-weight: bold;" text="Telephone" />
+                              <TextField fx:id="txtEmpTelephone" layoutX="225.0" layoutY="145.0" />
+                              <Label layoutX="28.0" layoutY="187.0" style="-fx-font-weight: bold;" text="Address" />
+                              <TextField fx:id="txtEmpAddress" layoutX="28.0" layoutY="205.0" />
+                              <Label layoutX="225.0" layoutY="187.0" style="-fx-font-weight: bold;" text="Username" />
+                              <TextField fx:id="txtEmpUsername" layoutX="225.0" layoutY="205.0" />
+                              <Label layoutX="28.0" layoutY="243.0" style="-fx-font-weight: bold;" text="Password" />
+                              <TextField fx:id="txtEmpPassword" layoutX="28.0" layoutY="261.0" text="changeMe" />
+                           </children>
+                        </AnchorPane>
+                     </content></Tab>
+                <Tab id="tabResetDelete" fx:id="tabEmpResetDelete" text="Reset/Delete">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Reset or delete an employee">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tvEmployeesResetCancel" layoutX="14.0" layoutY="41.0" prefHeight="278.0" prefWidth="271.0">
+                                <columns>
+                                  <TableColumn fx:id="colSurname" prefWidth="92.0" text="Surname" />
+                                  <TableColumn fx:id="colName" prefWidth="87.20001220703125" text="Name" />
+                                    <TableColumn fx:id="colUsername" prefWidth="89.60001220703123" text="Username" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="txtRDUsername" layoutX="300.0" layoutY="59.0" />
+                              <Label layoutX="300.0" layoutY="41.0" style="-fx-font-weight: bold;" text="Username" />
+                              <Button layoutX="343.0" layoutY="99.0" mnemonicParsing="false" onAction="#btnResetDeleteHandler" text="Reset" />
+                              <Button layoutX="398.0" layoutY="99.0" mnemonicParsing="false" onAction="#btnResetDeleteHandler" text="Delete" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </content>
+    </Tab>
+      <Tab fx:id="tabCustomersList" text="Customers">
+         <content>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="List">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tvCustomers" layoutX="14.0" layoutY="108.0" prefHeight="220.0" prefWidth="452.0">
+                                       <columns>
+                                          <TableColumn fx:id="colCUsername" prefWidth="75.0" text="Username" />
+                                          <TableColumn fx:id="colCSurname" prefWidth="75.0" text="Surname" />
+                                          <TableColumn fx:id="colCName" prefWidth="75.0" text="Name" />
+                                          <TableColumn fx:id="colCFiscalCode" prefWidth="75.0" text="Fiscal code" />
+                                          <TableColumn fx:id="colCTelephone" prefWidth="75.0" text="Telephone" />
+                                          <TableColumn fx:id="colCAddress" prefWidth="75.0" text="Address" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Customers">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtCustomersSurname" layoutX="14.0" layoutY="69.0" />
+                                    <Label layoutX="14.0" layoutY="51.0" style="-fx-font-weight: bold;" text="Surname" />
+                                    <Button layoutX="179.0" layoutY="69.0" mnemonicParsing="false" onAction="#btnSearchCustomersHandler" text="Search" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabCustomersRRP" text="Received purchase proposal">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Received purchase proposal">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tvRPurchaseProposal" layoutX="14.0" layoutY="41.0" prefHeight="75.0" prefWidth="494.0">
+                                 <columns>
+                                    <TableColumn fx:id="colRPPDate" prefWidth="89.5999755859375" text="Date" />
+                                    <TableColumn fx:id="colRPPUser" prefWidth="76.0" text="User" />
+                                    <TableColumn fx:id="colRPPDigitalSignature" prefWidth="103.199951171875" text="DigitalSignature" />
+                                    <TableColumn fx:id="colRPPPrice" prefWidth="54.39996337890625" text="Price" />
+                                    <TableColumn fx:id="colRPPDeliveryDate" prefWidth="101.60003662109375" text="Delivery Date" />
+                                    <TableColumn fx:id="colRPPFCService" prefWidth="68.80002441406248" text="FC Service" />
+                                 </columns>
+                              </TableView>
+                              <Button layoutX="332.0" layoutY="125.0" mnemonicParsing="false" onAction="#btnCreatePOHandler" text="Create relative purchase order" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tabSalesOrderToSign" text="Sales order to sign">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="600.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Sales orders to sign">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="tvSalesOrderToSign" layoutX="14.0" layoutY="47.0" prefHeight="200.0" prefWidth="290.0">
+                                       <columns>
+                                          <TableColumn fx:id="colSOTSDate" prefWidth="89.5999755859375" text="Date" />
+                                          <TableColumn fx:id="colSOTSUser" prefWidth="76.0" text="User" />
+                                          <TableColumn fx:id="colSOTSPrice" prefWidth="54.39996337890625" text="Price" />
+                                          <TableColumn fx:id="colSOTSFCService" prefWidth="68.80002441406248" text="FC Service" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="btnSOTS" layoutX="460.0" layoutY="171.0" mnemonicParsing="false" onAction="#btnSOTSHandler" text="Sign" />
+                                    <Label layoutX="330.0" layoutY="108.0" style="-fx-font-weight: bold;" text="Delivery date" />
+                                    <DatePicker fx:id="dateSOTSDeliveryDate" editable="false" layoutX="330.0" layoutY="126.0" prefHeight="26.0" prefWidth="171.0" />
+                                    <CheckComboBox fx:id="ccbOrdersToSign" layoutX="330.0" layoutY="65.0" prefHeight="26.0" prefWidth="170.0" styleClass="check-combo-box" />
+                                    <Label layoutX="330.0" layoutY="47.0" style="-fx-font-weight: bold;" text="Select orders to sign" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </content>
+      </Tab>
+      <Tab fx:id="tabPaneService" text="Service">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Send a purchase order">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="126.0" layoutX="14.0" layoutY="51.0" stroke="BLACK" strokeType="INSIDE" width="359.0" />
+                        <Label layoutX="28.0" layoutY="66.0" style="-fx-font-weight: bold;" text="Wine" />
+                        <CheckComboBox fx:id="ccbWines" layoutX="28.0" layoutY="84.0" prefHeight="26.0" prefWidth="150.0" />
+                        <Label layoutX="206.0" layoutY="66.0" style="-fx-font-weight: bold;" text="Quantity" />
+                        <ChoiceBox fx:id="cbQuantity" layoutX="206.0" layoutY="85.0" prefWidth="150.0" />
+                        <Button layoutX="312.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnSendPurchaseOrderHandler" text="Send" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tabNotifications" text="Notifications">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Wines under quantity threshold">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="41.0" text="Quantity thresholds are calculating in function of wines' prices." />
+                  <TableView fx:id="tvThreshold" layoutX="14.0" layoutY="65.0" prefHeight="200.0" prefWidth="234.0">
+                    <columns>
+                      <TableColumn fx:id="colTWine" prefWidth="125.5999755859375" text="Wine" />
+                      <TableColumn fx:id="colTCurrentQuantity" prefWidth="108.800048828125" text="Current quantity" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tabReport" text="Report">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Generate report">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="60.0" style="-fx-font-weight: bold;" text="From" />
+                  <Label layoutX="181.0" layoutY="60.0" style="-fx-font-weight: bold;" text="to" />
+                  <DatePicker fx:id="dateReportEnd" editable="false" layoutX="200.0" layoutY="55.0" prefHeight="26.0" prefWidth="114.0" />
+                  <DatePicker fx:id="dateReportStart" editable="false" layoutX="59.0" layoutY="55.0" prefWidth="114.0" />
+                  <Button fx:id="btnPrintReport" layoutX="362.0" layoutY="53.0" minWidth="58.0" mnemonicParsing="false" onAction="#btnPrintReportHandler" prefHeight="32.0" prefWidth="58.0" text="Print" />
+                  <ScrollPane layoutX="22.0" layoutY="120.0" prefHeight="230.0" prefWidth="422.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <VBox fx:id="vbAssesment" prefHeight="246.0" prefWidth="422.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <Label layoutX="22.0" layoutY="102.0" style="-fx-font-weight: bold;" text="Employees assesment" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab id="tabSettings" text="Settings">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="134.0" layoutX="14.0" layoutY="53.0" stroke="BLACK" strokeType="INSIDE" width="325.0" />
+                  <Button fx:id="btnChangePsw" layoutX="261.0" layoutY="148.0" mnemonicParsing="false" onAction="#btnChangePswHandler" text="Change" />
+                  <PasswordField fx:id="pswCurrentPsw" layoutX="168.0" layoutY="72.0" />
+                  <PasswordField fx:id="pswNewPsw" layoutX="168.0" layoutY="110.0" />
+                  <Label layoutX="36.0" layoutY="76.0" style="-fx-font-weight: bold;" text="Current password" />
+                  <Label layoutX="53.0" layoutY="114.0" style="-fx-font-weight: bold;" text="New password" />
+                  <Label layoutX="11.0" layoutY="14.0" style="-fx-font-weight: bold;" styleClass="titleText" text="Change password">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content></Tab>
+  </tabs>
+</TabPane>
