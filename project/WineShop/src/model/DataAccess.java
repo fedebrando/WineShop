@@ -1251,6 +1251,7 @@ public class DataAccess
 		{
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, (new Timestamp(start.getTime())).toString());
+			end = Date.valueOf(end.toLocalDate().plusDays(1));
 			pstmt.setString(2, (new Timestamp(end.getTime())).toString());
 			rset = pstmt.executeQuery();
 			
