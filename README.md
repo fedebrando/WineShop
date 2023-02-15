@@ -1,2 +1,3 @@
 # WineShop
-Progetto universitario (Ingegneria del Software)
+Progetto universitario (UniPr), Ingegneria del Software
+E-commerce di vini
