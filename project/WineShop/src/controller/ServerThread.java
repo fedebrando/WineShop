@@ -167,6 +167,7 @@ public class ServerThread implements Runnable
 		{	
 			os.writeObject(oSend);
 			os.flush();
+			os.reset();
 		}
 		catch (IOException e)
 		{

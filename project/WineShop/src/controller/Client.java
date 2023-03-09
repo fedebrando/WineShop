@@ -72,6 +72,7 @@ public class Client
 		{	
 			os.writeObject(oSend);
 			os.flush();
+			os.reset();
 		}
 		catch (IOException e)
 		{
